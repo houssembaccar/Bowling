@@ -33,5 +33,15 @@ public class TestPartie {
 		assertEquals(joueurPremier.getName(),"Houssam");
 		
 	}
+	
+	@Test
+	public void testLancer(){
+		Joueur joueur = new Joueur("houssem");
+		int quilleRestantes=10;
+		int quilleTombees = joueur.lancer(quilleRestantes);
+		
+		assertTrue(quilleTombees <= quilleRestantes);
+		
+	}
 
 }
