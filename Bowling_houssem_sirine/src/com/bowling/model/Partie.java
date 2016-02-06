@@ -19,7 +19,6 @@ public class Partie {
 		
 	}
 	
-	
 	public int getNbJoueurs() {
 		return nbJoueurs;
 	}
