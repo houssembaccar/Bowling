@@ -1,7 +1,10 @@
 package com.bowling.vue;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.bowling.model.Joueur;
+import com.bowling.model.Partie;
 import com.bowling.model.Tour;
 
 public class Vue {
@@ -30,6 +33,15 @@ public class Vue {
 			nbQuilleATomber = sc.nextInt();
 		}while(nbQuilleATomber > tour.getQuilleRestantes() || nbQuilleATomber < 0);
 		return nbQuilleATomber;
+	}
+	public String saisirNomJoueur(ArrayList<Joueur> joueurs,Partie p){
+		Scanner sc = new Scanner(System.in);
+		String nomJoueur="";
+		do{
+			System.out.println("saisir un nouveau nom de joueur qui n'existe pas encore:");
+			nomJoueur = sc.next();
+		}while ( p.nomJoueurExist(nomJoueur,joueurs));
+		return nomJoueur;
 	}
 
 }

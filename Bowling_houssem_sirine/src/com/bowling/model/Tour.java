@@ -1,7 +1,8 @@
 package com.bowling.model;
 
 public class Tour {
-
+	
+	private int numeroTour;
 	private TypeLance typeLance;
 	private int quilleTombee1;
 	private int quilleTombee2;
@@ -17,9 +18,10 @@ public class Tour {
 		this.point=0;
 		this.quilleRestantes=10;
 		this.nbLanceEffectue=0;
+		this.numeroTour=0;
 	}
 
-	private int numeroTour;
+	
 	public int getNumeroTour() {
 		return numeroTour;
 	}

@@ -36,9 +36,28 @@ public class TestPartie {
 	
 	@Test
 	public void testLancer(){
-		Joueur joueur = new Joueur("houssem");
+		Joueur joueur = new Joueur("houssem");		
+	}
+	@Test
+	public void testNomJoueurExist(){
+		Partie p = new Partie(2);
+		assertFalse(p.nomJoueurExist("toto",p.getJoueurs()));
+		Joueur joueur= new Joueur("toto");	
+		System.out.println(joueur.toString());
+		p.ajouterJoueur(joueur);
+		System.out.println(p.getJoueurs().toString());
+		assertTrue(p.nomJoueurExist("toto",p.getJoueurs()));
+		assertFalse(p.nomJoueurExist("toto2",p.getJoueurs()));
+	}
+	@Test
+	public void testGestionJeux(){
 		
-		
+		Partie partie = new Partie (2);		
+		Joueur joueur= new Joueur("Houssam");
+		partie.ajouterJoueur(joueur);
+		Joueur joueur2= new Joueur("sirine");
+		partie.ajouterJoueur(joueur2);
+		partie.organiserJeux();
 	}
 
 }
